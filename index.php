@@ -24,7 +24,7 @@ require_once __DIR__.'/controller/getAllQuestions.php';
 
 
 
-    <form method="post" action="" class="flex flex-col space-y-6 items-center pt-32 pb-16">
+    <form method="post" action="" class="flex flex-col space-y-6 mx-96 pt-32 pb-16">
     <?php
 
     foreach ($res as $question) {
@@ -33,20 +33,20 @@ require_once __DIR__.'/controller/getAllQuestions.php';
                 <span>'. $question['name']. '</span>
     
                 <div class="flex space-x-2 ">
-                    <input type="radio" id="response1" name="question' . $question['answer1'] . '>
-                    <label for="response1"> I have a bike</label>
+                    <input type="radio" id="response1' . $question['questionID'] . '" name="question' . $question['questionID'] . '">
+                    <label for="response1' . $question['questionID'] . '">'.$question['answer1'].'</label>
                 </div>
                 <div class="flex space-x-2">
-                    <input type="radio" id="response2"  name="question' . $question['answer2'] . '>
-                    <label for="response2"> I have a bike</label>
+                    <input type="radio" id="response2' . $question['questionID'] . '"  name="question' . $question['questionID'] . '">
+                    <label for="response2' . $question['questionID'] . '">'.$question['answer2'].'</label>
                 </div>
                 <div class="flex space-x-2">
-                    <input type="radio" id="response3" name="question' . $question['answer3'] . '">
-                    <label for="response3"> I have a bike</label>
+                    <input type="radio" id="response3' . $question['questionID'] . '" name="question' . $question['questionID'] . '">
+                    <label for="response3' . $question['questionID'] . '">'.$question['answer3'].'</label>
                 </div>
                 <div class="flex space-x-2">
-                    <input type="radio" id="response3" name="question' . $question['answer4'] . '">
-                    <label for="response3"> I have a bike</label>
+                    <input type="radio" id="response4' . $question['questionID'] . '" name="question' . $question['questionID'] . '">
+                    <label for="response4' . $question['questionID'] . '">'.$question['answer4'].'</label>
                 </div>
             </div>
         ';    } ?>
