@@ -30,11 +30,11 @@ foreach  ($result as $row) {
         $token['isConnected'] = true;
         $jwt = JWT::encode($token,'CESI','HS256');
         setcookie("JWT", $jwt, time()+3600, "/", "localhost");
-        header("Location: ../form-marine-main/index.html");
+        header("Location: ./index.html");
         die();
     }
 }
 $_SESSION['redirectStatus'] = "InvalidCredentials";  
-header('Location: ../form-marine-main/index.html');
+header('Location: ./index.html');
 die();
 ?>
