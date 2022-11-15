@@ -22,36 +22,38 @@ require_once __DIR__.'/controller/getAllQuestions.php';
     </div>
 
 
+
+
+    <form method="post" action="" class="flex flex-col space-y-6 items-center pt-32 pb-16">
     <?php
 
     foreach ($res as $question) {
         echo ' 
-            <form method="post" action="" class="flex justify-center min-h-screen items-center">
-                <div class="flex flex-col space-y-2">
-                    <span>'. $question['name']. '</span>
-        
-                    <div class="flex space-x-2">
-                        <input type="radio" id="response1" name="question' . $question['answer1'] . '>
-                        <label for="response1"> I have a bike</label>
-                    </div>
-                    <div class="flex space-x-2">
-                        <input type="radio" id="response2"  name="question' . $question['answer2'] . '>
-                        <label for="response2"> I have a bike</label>
-                    </div>
-                    <div class="flex space-x-2">
-                        <input type="radio" id="response3" name="question' . $question['answer3'] . '">
-                        <label for="response3"> I have a bike</label>
-                    </div>
-                    <div class="flex space-x-2">
-                        <input type="radio" id="response3" name="question' . $question['answer4'] . '">
-                        <label for="response3"> I have a bike</label>
-                    </div>
-                    <button type="submit" class="bg-[#3D5A80]/80 duration-300 hover:bg-[#3D5A80] text-white px-2 py-3 rounded-[10px] text-sm w-full !mt-6">Envoyer</button>
+            <div class="flex flex-col space-y-2 ">
+                <span>'. $question['name']. '</span>
+    
+                <div class="flex space-x-2 ">
+                    <input type="radio" id="response1" name="question' . $question['answer1'] . '>
+                    <label for="response1"> I have a bike</label>
                 </div>
-            </form>
-        
-        
+                <div class="flex space-x-2">
+                    <input type="radio" id="response2"  name="question' . $question['answer2'] . '>
+                    <label for="response2"> I have a bike</label>
+                </div>
+                <div class="flex space-x-2">
+                    <input type="radio" id="response3" name="question' . $question['answer3'] . '">
+                    <label for="response3"> I have a bike</label>
+                </div>
+                <div class="flex space-x-2">
+                    <input type="radio" id="response3" name="question' . $question['answer4'] . '">
+                    <label for="response3"> I have a bike</label>
+                </div>
+            </div>
         ';    } ?>
+
+        <button type="submit" class="bg-[#3D5A80]/80 duration-300 hover:bg-[#3D5A80] text-white px-2 py-3 rounded-[10px] text-sm w-full !mt-6 w-1/4 items-center">Envoyer</button>
+
+    </form>
 
 
 
