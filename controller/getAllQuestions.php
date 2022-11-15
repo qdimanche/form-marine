@@ -7,6 +7,7 @@ $stmt->execute();
 $data = $stmt->fetchAll();
 $iteration = 0;
 $res = [];
+
 foreach ($data as $question) {
     $iteration++;
     $questionID = $question['questionID'];
@@ -22,4 +23,4 @@ foreach ($data as $question) {
     $res[$iteration]['answer3'] = $tabdesreponses[2];
     $res[$iteration]['answer4'] = $tabdesreponses[3];
 }
-$res[0] = $iteration;
+$res['nbQuestion'] = $iteration;
