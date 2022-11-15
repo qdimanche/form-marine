@@ -1,6 +1,6 @@
 <?php
 
-require '../config/connect.php';
+require dirname(__DIR__).'/config/connect.php';
 $query = "Select * from answers WHERE questionID = " . $questionID;
 //ECHO $query;
 $stmt = $db->prepare($query);
@@ -12,3 +12,4 @@ foreach ($data as $answer){
     $tabdesreponses[$iterator] = $answer['name'];
     $iterator++;
 }
+?>

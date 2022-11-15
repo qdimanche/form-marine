@@ -1,6 +1,6 @@
 <?php
 
-require '../config/connect.php';
+require dirname(__DIR__).'/config/connect.php';
 if ($_POST['categoriesName']) {
     $name = $_POST['categoriesName'];
     $stmt = $db->prepare("INSERT INTO `categories` (name) VALUES '$name'");
@@ -11,3 +11,4 @@ if ($_POST['categoriesName']) {
 } else {
     header();
 }
+?>
