@@ -22,5 +22,4 @@ foreach ($data as $question) {
     $res[$iteration]['answer3'] = $tabdesreponses[2];
     $res[$iteration]['answer4'] = $tabdesreponses[3];
 }
-var_dump($res);
 $res[0] = $iteration;
