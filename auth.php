@@ -1,18 +1,18 @@
 <?php
 session_start();
 require_once './controller/connect.php';
-require_once '../php-jwt/src/BeforeValidException.php';
-require_once '../php-jwt/src/ExpiredException.php';
-require_once '../php-jwt/src/SignatureInvalidException.php';
-require_once '../php-jwt/src/JWT.php';
-require_once '../php-jwt/src/Key.php';
+require_once './php-jwt/src/BeforeValidException.php';
+require_once './php-jwt/src/ExpiredException.php';
+require_once './php-jwt/src/SignatureInvalidException.php';
+require_once './php-jwt/src/JWT.php';
+require_once './php-jwt/src/Key.php';
 use \Firebase\JWT\JWT;
 use \Firebase\JWT\Key;
 
 $jwt = null;
 if (isset($_COOKIE['JWT'])) {
     $jwt = trim($_COOKIE['JWT']);    
-    $token = JWT::decode($jwt, new Key($tokenKey, 'HS256'));
+    $token = JWT::decode($jwt, new Key('CESI', 'HS256'));
     $token = (array) $token;
     if($token['isConnected'] == true) {
         $_SESSION['login'] = $token['login'];
@@ -30,7 +30,7 @@ if (isset($_COOKIE['JWT'])) {
     }                         
 }else{
     $_SESSION['redirectStatus'] = "InvalidToken";  
-    header('Location: ../front/index.php');
+    header('Location: ./index.php');
     die();
 }
 
