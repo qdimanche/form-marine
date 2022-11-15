@@ -1,6 +1,6 @@
 <?php
 
-require './connect.php';
+require '../config/connect.php';
 $query = "Select * from answers WHERE questionID = " . $questionID;
 //ECHO $query;
 $stmt = $db->prepare($query);

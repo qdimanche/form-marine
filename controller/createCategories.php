@@ -1,7 +1,6 @@
 <?php
 
-require 'connect.php';
-
+require '../config/connect.php';
 if ($_POST['categoriesName']) {
     $name = $_POST['categoriesName'];
     $stmt = $db->prepare("INSERT INTO `categories` (name) VALUES '$name'");
