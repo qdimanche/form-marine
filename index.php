@@ -1,5 +1,4 @@
 <?php
-require_once './controller/connect.php';
 require_once './controller/getAllQuestions.php';
 ?>
 
@@ -32,19 +31,19 @@ require_once './controller/getAllQuestions.php';
                     <span>'. $question['name']. '</span>
         
                     <div class="flex space-x-2">
-                        <input type="radio" id="response1" name="question' . $question['answer1'] . '" value="valeur-bareme">
+                        <input type="radio" id="response1" name="question' . $question['answer1'] . '>
                         <label for="response1"> I have a bike</label>
                     </div>
                     <div class="flex space-x-2">
-                        <input type="radio" id="response2"  name="question' . $question['answer2'] . '" value="valeur-bareme">
+                        <input type="radio" id="response2"  name="question' . $question['answer2'] . '>
                         <label for="response2"> I have a bike</label>
                     </div>
                     <div class="flex space-x-2">
-                        <input type="radio" id="response3" name="question' . $question['answer3'] . '"  value="valeur-bareme">
+                        <input type="radio" id="response3" name="question' . $question['answer3'] . '">
                         <label for="response3"> I have a bike</label>
                     </div>
                     <div class="flex space-x-2">
-                        <input type="radio" id="response3" name="question' . $question['answer4'] . '"  value="valeur-bareme">
+                        <input type="radio" id="response3" name="question' . $question['answer4'] . '">
                         <label for="response3"> I have a bike</label>
                     </div>
                     <button type="submit" class="bg-[#3D5A80]/80 duration-300 hover:bg-[#3D5A80] text-white px-2 py-3 rounded-[10px] text-sm w-full !mt-6">Envoyer</button>
