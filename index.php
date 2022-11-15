@@ -1,5 +1,5 @@
 <?php
-require_once './controller/getAllQuestions.php';
+require_once __DIR__.'/controller/getAllQuestions.php';
 ?>
 
 
