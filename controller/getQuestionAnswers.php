@@ -9,7 +9,7 @@ $data = $stmt->fetchAll();
 //var_dump($data);
 $iterator = 0;
 foreach ($data as $answer){
-    $tabdesreponses[$iterator] = $answer['name'];
+    $answersTab[$iterator] = $answer['name'];
     $iterator++;
 }
 ?>
