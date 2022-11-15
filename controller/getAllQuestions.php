@@ -3,7 +3,12 @@
 require dirname(__DIR__).'/config/connect.php';
 
 $stmt = $db->prepare("SELECT * FROM QUESTIONS");
-$stmt->execute();
+try {
+    $stmt->execute();
+} catch (PDOException $e) {
+    print "Error! : " . $e->getMessage() . "<br/>";
+    die();
+}
 $data = $stmt->fetchAll();
 $iteration = 0;
 $res = [];

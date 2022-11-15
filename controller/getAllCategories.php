@@ -2,7 +2,12 @@
 require dirname(__DIR__).'/config/connect.php';
 $query = "Select * from categories ";
 $stmt = $db->prepare($query);
-$stmt->execute();
+try {
+    $stmt->execute();
+} catch (PDOException $e) {
+    print "Error! : " . $e->getMessage() . "<br/>";
+    die();
+}
 $data = $stmt->fetchAll();
 //$categoryName = $data['name'];
 var_dump($data[0]['name']);

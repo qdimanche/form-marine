@@ -4,7 +4,12 @@ require dirname(__DIR__).'/config/connect.php';
 $query = "Select * from answers WHERE questionID = " . $questionID;
 //ECHO $query;
 $stmt = $db->prepare($query);
-$stmt->execute();
+try {
+    $stmt->execute();
+} catch (PDOException $e) {
+    print "Error! : " . $e->getMessage() . "<br/>";
+    die();
+}
 $data = $stmt->fetchAll();
 //var_dump($data);
 $iterator = 0;
