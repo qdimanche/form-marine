@@ -12,7 +12,6 @@ require_once __DIR__.'/controller/getAllQuestions.php';
 </head>
 <body>
 
-
     <div class="absolute top-8 flex justify-between w-full px-8 items-center">
         <a href="index.php"><img src="assets/images/home.png" class="w-6" alt=""></a>
         <div class="space-x-2">
@@ -24,7 +23,7 @@ require_once __DIR__.'/controller/getAllQuestions.php';
 
 
 
-    <form method="post" action="" class="flex flex-col space-y-6 mx-96 pt-32 pb-16">
+    <form method="post" action="" class="flex flex-col space-y-6 w-1/4 mx-auto pt-32 pb-16">
     <?php
 
     foreach ($res as $question) {
