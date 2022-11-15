@@ -11,17 +11,16 @@ foreach ($data as $question) {
     $iteration++;
     $questionID = $question['questionID'];
     $name = $question['name'];
-    $category = $question['categoryID'];
+    $categoryID = $question['categoryID'];
     require 'getQuestionAnswers.php';
-    $res[$iteration][0] = $questionID;
-    //$res[$iteration][1] = resultat du controller GetCategory
-    $res[$iteration][1] = $name;
-    $res[$iteration][2] = $questionID;
-    $res[$iteration][3] = $tabdesreponses[0];
-    $res[$iteration][4] = $tabdesreponses[1];
-    $res[$iteration][4] = $tabdesreponses[2];
-    $res[$iteration][4] = $tabdesreponses[3];
-    var_dump($res);
-
+    $res[$iteration]['questionID'] = $questionID;
+    $res[$iteration]['name'] = $name;
+    require 'getQuestionCategory.php';
+    $res[$iteration]['categoryName'] = $categoryName;
+    $res[$iteration]['answer1'] = $tabdesreponses[0];
+    $res[$iteration]['answer2'] = $tabdesreponses[1];
+    $res[$iteration]['answer3'] = $tabdesreponses[2];
+    $res[$iteration]['answer4'] = $tabdesreponses[3];
 }
+var_dump($res);
 $res[0] = $iteration;

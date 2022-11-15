@@ -1,7 +1,6 @@
 <?php
 
 require './connect.php';
-$questionID = 1;
 $query = "Select * from answers WHERE questionID = " . $questionID;
 //ECHO $query;
 $stmt = $db->prepare($query);
