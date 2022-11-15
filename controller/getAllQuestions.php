@@ -18,9 +18,9 @@ foreach ($data as $question) {
     $res[$iteration]['name'] = $name;
     require 'getQuestionCategory.php';
     $res[$iteration]['categoryName'] = $categoryName;
-    $res[$iteration]['answer1'] = $tabdesreponses[0];
-    $res[$iteration]['answer2'] = $tabdesreponses[1];
-    $res[$iteration]['answer3'] = $tabdesreponses[2];
-    $res[$iteration]['answer4'] = $tabdesreponses[3];
+    $res[$iteration]['answer1'] = $answersTab[0];
+    $res[$iteration]['answer2'] = $answersTab[1];
+    $res[$iteration]['answer3'] = $answersTab[2];
+    $res[$iteration]['answer4'] = $answersTab[3];
 }
 $res['nbQuestion'] = $iteration;
