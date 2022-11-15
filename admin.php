@@ -24,13 +24,14 @@
     </div>
     <div class="flex flex-col space-y-2 relative w-1/2">
       <label for="categories">Sélectionner la catégorie</label>
-      <select name="categories" id="categories">
-        <option value="categorie1">categorie1</option>
-        <option value="categorie2">categorie2</option>
-        <option value="categorie3">categorie3</option>
-        <option value="categorie4">categorie4</option>
-      </select>
-      <img src="assets/images/icons8-chevron-96.png" alt="" class="absolute w-6 bottom-2 right-2 pointer-events-none">
+        <select name="categories" id="categories">
+            <?php
+            require __DIR__.'/controller/getAllCategories.php';
+            foreach ($res as $categoryName): ?>
+                <option value="categorie1"><?php echo $categoryName ?></option>
+            <?php endforeach; ?>
+        </select>
+        <img src="assets/images/icons8-chevron-96.png" alt="" class="absolute w-6 bottom-2 right-2 pointer-events-none">
     </div>
   </div>
 
