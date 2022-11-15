@@ -1,6 +1,6 @@
 <?php
 
-require 'connect.php';
+require '../config/connect.php';
 
 $stmt = $db->prepare("SELECT * FROM QUESTIONS");
 $stmt->execute();
