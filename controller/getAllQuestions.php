@@ -11,6 +11,16 @@ foreach ($data as $question) {
     $iteration++;
     $questionID = $question['questionID'];
     $name = $question['name'];
-    $category = $question['categoryID'];
-    }
-    var_dump($question);
+    $categoryID = $question['categoryID'];
+    require 'getQuestionAnswers.php';
+    $res[$iteration]['questionID'] = $questionID;
+    $res[$iteration]['name'] = $name;
+    require 'getQuestionCategory.php';
+    $res[$iteration]['categoryName'] = $categoryName;
+    $res[$iteration]['answer1'] = $tabdesreponses[0];
+    $res[$iteration]['answer2'] = $tabdesreponses[1];
+    $res[$iteration]['answer3'] = $tabdesreponses[2];
+    $res[$iteration]['answer4'] = $tabdesreponses[3];
+}
+var_dump($res);
+$res[0] = $iteration;
