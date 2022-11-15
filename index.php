@@ -24,7 +24,7 @@ require_once __DIR__.'/controller/getAllQuestions.php';
 
 
 
-    <form method="post" action="" class="flex flex-col space-y-6 items-center min-h-screen ">
+    <form method="post" action="" class="flex flex-col space-y-6 items-center pt-32 pb-16">
     <?php
 
     foreach ($res as $question) {
