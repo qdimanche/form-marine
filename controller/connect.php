@@ -1,7 +1,7 @@
 <?php
 
 try {
-    $db = new PDO('mysql:host=localhost;dbname=php-formv2', 'root', 'root');
+    $db = new PDO('mysql:host=localhost;dbname=formmarine', 'root', '');
 } catch (PDOException $e) {
     print "Error! : " . $e->getMessage() . "<br/>";
     die();
