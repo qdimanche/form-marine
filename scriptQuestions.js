@@ -1,7 +1,8 @@
 let radio = document.querySelectorAll('input[type=radio]');
 let button = document.getElementById("btn_Questions");
 
-function verifRadio() {
+function verifRadio(json) {
+    const obj = JSON.parse(json);
     var nbQuestion = document.getElementById('nbQuestion').value, radios,
         i, n, flag=true, flag_interne, num_question=0;
         console.log('test');

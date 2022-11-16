@@ -24,6 +24,12 @@ if (isset($_POST['nbQuestion'])) {
         $graduationID = $graduation['0'];
       }
     }
+    try {
+        $query = "INSERT INTO `results` VALUES (NULL,".$value.",".$total ."," . $content . ")";
+        }
+    } catch (PDOException $e) {
+        echo 'Error : ' . $e->getMessage() . '<br/>';
+    }
   ?>
     <form id="hiddenForm" method="post" action="..\congrats.php">
     <input type="hidden" name="content" value="<?php echo $content ?>">
