@@ -1,6 +1,6 @@
 <?php
 require dirname(__DIR__).'/config/connect.php';
-$query = "Select * from categories ";
+$query = "Select * from categories";
 $stmt = $db->prepare($query);
 try {
     $stmt->execute();
@@ -16,7 +16,7 @@ $i = 0;
 foreach ($data as $category) {
     $name = $category['name'];
     $id = $category['categoryID'];
-    $res[$i] = [$id,$name];
+    $res[$i] = [id=>$id,name=>$name];
     $i++;
 }
 ?>
