@@ -16,7 +16,7 @@ $i = 0;
 foreach ($data as $category) {
     $name = $category['name'];
     $id = $category['categoryID'];
-    $res[$i] = [id=>$id,name=>$name];
+    $res[$i] = ["id"=>$id,"name"=>$name];
     $i++;
 }
 ?>
