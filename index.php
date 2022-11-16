@@ -23,7 +23,7 @@ require_once __DIR__.'/controller/getAllQuestions.php';
 
 
 
-    <form method="post" action="./controller/test.php" class="flex flex-col space-y-6 w-1/4 mx-auto pt-32 pb-16">
+    <form method="post" action="./controller/createResult.php" class="flex flex-col space-y-6 w-1/4 mx-auto pt-32 pb-16">
     <?php
 
     foreach ($res as $question):
@@ -32,19 +32,19 @@ require_once __DIR__.'/controller/getAllQuestions.php';
                 <span><?php echo $question['name'] ?></span>
 
                 <div class="flex space-x-2 ">
-                    <input type="radio" id="response1<?php echo $question['questionID'] ?>" name="question<?php echo $question['questionID'] ?>" value="<?php echo $question['questionID']?>:1">
+                    <input type="radio" id="response1<?php echo $question['questionID'] ?>" name="question<?php echo $question['questionID'] ?>" value="1">
                     <label for="response1<?php echo $question['questionID'] ?>"><?php echo $question['answer1'] ?></label>
                 </div>
                 <div class="flex space-x-2">
-                    <input type="radio" id="response2<?php echo $question['questionID'] ?>"  name="question<?php echo $question['questionID'] ?>" value="<?php echo $question['questionID']?>:2">
+                    <input type="radio" id="response2<?php echo $question['questionID'] ?>"  name="question<?php echo $question['questionID'] ?>" value="2">
                     <label for="response2<?php echo $question['questionID'] ?>"><?php echo $question['answer2'] ?></label>
                 </div>
                 <div class="flex space-x-2">
-                    <input type="radio" id="response3<?php echo $question['questionID'] ?>" name="question<?php echo $question['questionID'] ?>" value="<?php echo $question['questionID']?>:3">
+                    <input type="radio" id="response3<?php echo $question['questionID'] ?>" name="question<?php echo $question['questionID'] ?>" value="3">
                     <label for="response3<?php echo $question['questionID'] ?>"><?php echo $question['answer3'] ?></label>
                 </div>
                 <div class="flex space-x-2">
-                    <input type="radio" id="response4<?php echo $question['questionID'] ?>" name="question<?php echo $question['questionID'] ?>" value="<?php echo $question['questionID']?>:4">
+                    <input type="radio" id="response4<?php echo $question['questionID'] ?>" name="question<?php echo $question['questionID'] ?>" value="4">
                     <label for="response4<?php echo $question['questionID'] ?>"><?php echo $question['answer4'] ?></label>
                 </div>
 
