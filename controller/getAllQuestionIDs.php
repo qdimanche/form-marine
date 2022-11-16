@@ -9,8 +9,6 @@ try {
     die();
 }
 $data = $stmt->fetchAll();
-//$categoryName = $data['name'];
-var_dump($data);
 $res = [];
 $i = 0;
 foreach ($data as $question) {

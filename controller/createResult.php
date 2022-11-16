@@ -8,7 +8,6 @@ if (isset($_POST['nbQuestion'])) {
     $total = 0;
     $i = 1;
     foreach ($res as $questionID) {
-      echo "Question " . $questionID . " : " . ($_POST["question" . $questionID]);
       $value .= $questionID . ":" . ($_POST["question" . $questionID]);
       if ($i != $nbQuestion){
         $value .= "-";
@@ -25,8 +24,17 @@ if (isset($_POST['nbQuestion'])) {
         $graduationID = $graduation['0'];
       }
     }
-    ?>
+  ?>
+    <form id="hiddenForm" method="post" action="..\congrats.php">
+    <input type="hidden" name="content" value="<?php echo $content ?>">
+    <input type="hidden" name="total" value="<?php echo $total ?>">
+    <input type="hidden" name="graduationID" value=<?php echo $graduationID ?>>
+    </form>
 
-<?php
+    <script type="text/javascript">
+    console.log('cc');
+      document.forms['hiddenForm'].submit();
+    </script>
+    <?php
 }
 ?>

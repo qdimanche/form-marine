@@ -9,7 +9,6 @@ try {
     die();
 }
 $data = $stmt->fetchAll();
-//$categoryName = $data['name'];
 $res = [];
 $i = 0;
 foreach ($data as $graduations) {
