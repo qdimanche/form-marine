@@ -1,6 +1,6 @@
 <?php
-session_start();
-require_once './controller/connect.php';
+// session_start();
+require_once __DIR__.'/config/connect.php';
 require_once './php-jwt/src/BeforeValidException.php';
 require_once './php-jwt/src/ExpiredException.php';
 require_once './php-jwt/src/SignatureInvalidException.php';

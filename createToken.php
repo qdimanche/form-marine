@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once dirname(__DIR__).'/config/connect.php';
+require_once __DIR__.'/config/connect.php';
 require_once './php-jwt/src/BeforeValidException.php';
 require_once './php-jwt/src/ExpiredException.php';
 require_once './php-jwt/src/SignatureInvalidException.php';
@@ -28,7 +28,8 @@ foreach  ($result as $row) {
         $token['login'] = $row['login'];
         $token['userID'] = $row['userID'];
         $token['isConnected'] = true;
-        $jwt = JWT::encode($token,'CESI','HS256');
+        $_SESSION['isConnected']=true;
+        $jwt = JWT::encode($token,$key,'HS256');
         setcookie("JWT", $jwt, time()+3600, "/", "localhost");
         header("Location: ./index.php");
         die();
