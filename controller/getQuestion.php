@@ -1,7 +1,7 @@
 <?php
 
 require dirname(__DIR__).'/config/connect.php';
-$numQuestion = $_POST['numQuestion']
+$numQuestion = $_POST['numQuestion'];
 $stmt = $db->prepare("SELECT * FROM QUESTIONS WHERE questionID = '$numQuestion'");
 try {
     $stmt->execute();
@@ -20,6 +20,7 @@ $res = [];
     $res[$iteration]['name'] = $name;
     require 'getQuestionCategory.php';
     $res[$iteration]['categoryName'] = $categoryName;
+    $res[$iteration]['categoryID'] = $categoryID;
     $res[$iteration]['answer1'] = $answersTab[0];
     $res[$iteration]['answer2'] = $answersTab[1];
     $res[$iteration]['answer3'] = $answersTab[2];

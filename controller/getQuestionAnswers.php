@@ -1,5 +1,4 @@
 <?php
-
 require dirname(__DIR__).'/config/connect.php';
 $query = "Select * from answers WHERE questionID = " . $questionID;
 //ECHO $query;
