@@ -1,4 +1,5 @@
 <?php
+require dirname(__DIR__).'/config/connect.php';
 $result = "";
 $pointsFinal = 0;
 $result .= $_POST['question1'];
@@ -15,5 +16,26 @@ var_dump($points);
 $pointsFinal += intval($points[1]);
 }
 echo "point final : " . $pointsFinal;
+$query = "INSERT INTO `questions` (`questionID`, `name`, `categoryID`) VALUES (NULL, 'tututututu', '3');";
+$stmt = $db->prepare($query);
+try {
+    $stmt->execute();
+} catch (PDOException $e) {
+    print "Error! : " . $e->getMessage() . "<br/>";
+    die();
+}
+
+$query = "SELECT LAST_INSERT_ID()";
+$stmt = $db->prepare($query);
+try {
+    $stmt->execute();
+} catch (PDOException $e) {
+    print "Error! : " . $e->getMessage() . "<br/>";
+    die();
+}
+$res = $stmt->fetchAll();
+var_dump($res);
+
+
 die();
 ?>

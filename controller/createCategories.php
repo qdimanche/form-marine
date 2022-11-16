@@ -3,7 +3,9 @@
 require dirname(__DIR__).'/config/connect.php';
 if ($_POST['categoriesName']) {
     $name = $_POST['categoriesName'];
-    $stmt = $db->prepare("INSERT INTO `categories` (name) VALUES '$name'");
+    $query = "INSERT INTO `categories`(`categoryID`, `name`) VALUES (NULL, '" . $name . "')";
+    echo $query;
+    $stmt = $db->prepare($query);
     try {
         $res = $stmt->execute();
     } catch (PDOException $e) {
