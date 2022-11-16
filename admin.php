@@ -23,7 +23,7 @@ require 'header.php';?>
             <?php
             require __DIR__.'/controller/getAllCategories.php';
             foreach ($res as $category): ?>
-                <option value="categorie1"><?php echo $category['name'] ?></option>
+                <option value="<?php echo $category['id']  ?>"><?php echo $category['name'] ?></option>
             <?php endforeach; ?>
         </select>
         <img src="assets/images/icons8-chevron-96.png" alt="" class="absolute w-6 bottom-2 right-2 pointer-events-none">
