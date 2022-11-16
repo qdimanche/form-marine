@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require dirname(__DIR__).'/config/connect.php';
 $result = "";
 $pointsFinal = 0;
@@ -38,4 +38,7 @@ var_dump($res);
 
 
 die();
-?>
+?> -->
+<?php
+var_dump($_POST);
+ ?>

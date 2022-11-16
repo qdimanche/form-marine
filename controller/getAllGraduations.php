@@ -1,6 +1,6 @@
 <?php
 require dirname(__DIR__).'/config/connect.php';
-$query = "Select * from categories ";
+$query = "Select * from graduations";
 $stmt = $db->prepare($query);
 try {
     $stmt->execute();
@@ -10,13 +10,14 @@ try {
 }
 $data = $stmt->fetchAll();
 //$categoryName = $data['name'];
-var_dump($data[0]['name']);
 $res = [];
 $i = 0;
-foreach ($data as $category) {
-    $name = $category['name'];
-    $id = $category['categoryID'];
-    $res[$i] = [$id,$name];
+foreach ($data as $graduations) {
+    $id = $graduations['graduationID'];
+    $min = $graduations['min'];
+    $max = $graduations['max'];
+    $content = $graduations['content'];
+    $res[$i] = [$id,$min,$max,$content];
     $i++;
 }
 ?>
