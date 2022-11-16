@@ -25,8 +25,8 @@ if (isset($_POST['nbQuestion'])) {
       }
     }
     try {
-        $query = "INSERT INTO `results` VALUES (NULL,".$value.",".$total ."," . $content . ")";
-        }
+        $query = "INSERT INTO results VALUES (NULL,'$value','$total','$content');";
+              }
     } catch (PDOException $e) {
         echo 'Error : ' . $e->getMessage() . '<br/>';
     }

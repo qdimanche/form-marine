@@ -2,6 +2,7 @@
 
 require_once __DIR__.'/controller/getAllQuestionIDs.php';
 echo(json_encode($res));
+//var_dump(($res));
 // session_start();
 // require 'auth.php';
 // echo $_SESSION['login'];
@@ -22,7 +23,7 @@ echo(json_encode($res));
     <?php require 'header.php';?>
 
 
-    <form method="post" onsubmit="return verifRadio(<?php echo(json_encode($res)); ?>)" action="./controller/createResult.php" class="flex flex-col space-y-6 w-1/4 mx-auto pt-32 pb-16">
+    <form method="post" onsubmit="return verifRadio()" action="./controller/createResult.php" class="flex flex-col space-y-6 w-1/4 mx-auto pt-32 pb-16">
     <?php
     require_once __DIR__.'/controller/getAllQuestions.php';
     foreach ($res as $question):
@@ -53,9 +54,10 @@ echo(json_encode($res));
 
         <button type="submit" id="btn_Questions" class="bg-[#3D5A80]/80 duration-300 hover:bg-[#3D5A80] text-white px-2 py-3 rounded-[10px] text-sm w-full !mt-6 w-1/4 items-center">Envoyer</button>
 
-    </form>
-    <script type='text/javascript'>
- src='scriptQuestions.js'></script>
+
+    <script src='scriptQuestions.js'>
+    alert("Vous n'avez pas répondu à la question n°");
+    </script>
 
 
 

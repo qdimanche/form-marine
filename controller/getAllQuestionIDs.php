@@ -13,7 +13,7 @@ $res = [];
 $i = 0;
 foreach ($data as $question) {
     $questionID     = $question['questionID'];
-    $res[$i] = $questionID;
+    $res[$i] = intval($questionID);
     $i++;
 }
 ?>
