@@ -12,7 +12,7 @@ use \Firebase\JWT\Key;
 $jwt = null;
 if (isset($_COOKIE['JWT'])) {
     $jwt = trim($_COOKIE['JWT']);    
-    $token = JWT::decode($jwt, new Key('CESI', 'HS256'));
+    $token = JWT::decode($jwt, new Key($key, 'HS256'));
     $token = (array) $token;
     if($token['isConnected'] == true) {
         $_SESSION['login'] = $token['login'];
@@ -22,7 +22,7 @@ if (isset($_COOKIE['JWT'])) {
         $result = count($statement->fetchAll());
         if($result == 0){
             $_SESSION['redirectStatus'] = "InvalidAccount";  
-            header('Location: ../front/index.php');
+            header('Location: ./index.php');
             die();
         }
         $_SESSION['login'] = $token['login'];
