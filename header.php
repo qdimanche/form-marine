@@ -11,6 +11,5 @@
             echo '<a href="loginForm.php" class="bg-[#293241]/80 duration-300 hover:bg-[#293241] text-white px-2 py-3 rounded-[10px] text-sm">Se connecter</a>';
         }
         ?>
-            
         </div>
 </div>
