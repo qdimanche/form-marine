@@ -46,8 +46,8 @@ require_once './controller/getQuestion.php';
 
       <div class="flex space-x-6 pt-4 relative justify-between">
           <div class="flex flex-col space-y-2 w-4/5">
-              <label for="response1">Modifier votre réponse <?php echo $res['answer'.$i."Value"] ?></label>
-              <input id="response1" type="text" value="<?php echo $res['answer'.$i] ?>" >
+              <label for="answer<?php echo $res['answer'.$i.'Value'] ?>">Modifier votre réponse <?php echo $res['answer'.$i."Value"] ?></label>
+              <input id="answer<?php echo $res['answer'.$i.'Value'] ?>" type="text" value="<?php echo $res['answer'.$i] ?>" >
           </div>
 
           <div class="flex w-1/5 items-center relative">
@@ -64,7 +64,7 @@ require_once './controller/getQuestion.php';
     <img src="assets/images/icons8-chevron-96.png" alt="" class="absolute w-6 bottom-2 right-2 pointer-events-none">
     </div>
     <div class="">
-        <img src="assets/images/icons8-multiply-96.png" class="w-4  cursor-pointer bottom-3 right-0 absolute" alt="">
+        <img src="assets/images/icons8-multiply-96.png" class="w-4  cursor-pointer bottom-3 right-0 absolute" onclick="clearAnswer(<?php echo $res['answer'.$i.'Value'] ?>)" alt="">
     </div>
 
     </div>
@@ -85,7 +85,7 @@ require_once './controller/getQuestion.php';
 </form>
 
 
-
+<script src='script.js'></script>
 
 
 </body>
