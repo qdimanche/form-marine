@@ -35,5 +35,5 @@ for ($i = 1; $i <= 4; $i++) {
             echo "Erreur : " . $e->getMessage() . "<br/>";
         }
     }
-    header('Location: ../index.php');
+    header('Location: ../questionsList.php');
 }
