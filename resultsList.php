@@ -19,8 +19,8 @@ require_once __DIR__ . '/controller/getAllResults.php';
         foreach ($res as $result): ?>
             <div class="flex flex-col">
                 <div class="flex items-center justify-between py-8 border-b border-slate-200">
-                    <span class="w-4/5">Résultat <?php echo $iterator ?></span>
-                    <div class="flex space-x-6">
+                    <span class="w-3/5">Résultat <?php echo $iterator ?></span>
+                    <div class="flex space-x-4 w-2/5">
                         <span class="font-bold">Nombre de points :</span>
                         <span><?php echo $result?></span>
                     </div>
