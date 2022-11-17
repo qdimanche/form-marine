@@ -2,10 +2,10 @@
 require dirname(__DIR__).'/config/connect.php';
 $questionId = $_POST['questionId'];
 try {
-    if ($query = $db->prepare("DELETE FROM questions WHERE questionID = :id; DELETE FROM answers WHERE questionID = :id")) {
+    if ($query = $db->prepare("DELETE FROM answers WHERE questionID = :id; DELETE FROM questions WHERE questionID = :id; ")) {
         $query->bindParam(":id", $questionId);
         if ($query->execute()) {
-            header('Location: ../admin.php');
+            header('Location: ../questionsList.php');
         }
     }
 } catch (PDOException $e) {

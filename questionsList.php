@@ -24,7 +24,7 @@ require_once __DIR__.'/controller/getAllQuestions.php';
         $iterator = 1;
         foreach ($res as $question):
           if($question !== $res["nbQuestion"]):  ?>
-            <form method="post" action="editQuestion.php" class="space-y-6 flex flex-col ">
+
                 <div class="flex flex-col">
                     <div class="flex items-center justify-between py-8 border-b border-slate-200">
                         <div class="flex space-x-2">
@@ -32,15 +32,20 @@ require_once __DIR__.'/controller/getAllQuestions.php';
                             <span><?php echo $question['name']?></span>
                             <?php $iterator++ ?>
                         </div>
-                        <input type="hidden" name="numQuestion" value="<?php echo $question['questionID'] ?>">
                         <div class="space-x-6 flex w-1/5">
-                            <button type="submit" name="delete" class="bg-[#3D5A80]/80 hover:bg-[#2b3f5a] duration-300 text-white px-2 py-3 rounded-[10px] text-sm w-1/2">Modifier</button>
-                            <button type="submit" name="modify" class="bg-[#293241]/80 duration-300 hover:bg-[#293241] text-white px-2 py-3 rounded-[10px] text-sm w-1/2">Supprimer</button>
+                            <form method="post" action="editQuestion.php" class="flex flex-col w-1/2 ">
+                                <input type="hidden" name="numQuestion" value="<?php echo $question['questionID'] ?>"><button type="submit" name="modify" class="bg-[#3D5A80]/80 hover:bg-[#3D5A80] duration-300 text-white px-2 py-3 rounded-[10px] text-sm ">Modifier</button>
+                            </form>
+                            <form method="post" action="./controller/deleteQuestion.php" class="flex flex-col w-1/2">
+                                <input type="hidden" name="questionID" value="<?php echo $question['questionID'] ?>"><button type="submit" name="modify" class="bg-[#293241]/80 duration-300 hover:bg-[#293241] text-white px-2 py-3 rounded-[10px] text-sm">Supprimer</button>
+                            </form>
                         </div>
+
 
                     </div>
                 </div>
-            </form>
+
+
         <?php endif; endforeach;?>
     </div>
 
