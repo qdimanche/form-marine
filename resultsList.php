@@ -10,12 +10,12 @@
 
 <?php require 'header.php';
 require_once __DIR__ . '/controller/getAllResults.php';
+require 'auth.php';
 ?>
 
 <div class="lg:mx-60 mx-20 pb-16 pt-32">
     <form>
         <?php
-        require 'auth.php';
         $iterator = 1;
         if (count($res)>0):
         foreach ($res as $result): ?>

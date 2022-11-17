@@ -9,6 +9,7 @@
 <body>
 
 <?php require 'header.php';
+require 'auth.php';
 require_once __DIR__.'/controller/getAllQuestions.php';
 ?>
 
