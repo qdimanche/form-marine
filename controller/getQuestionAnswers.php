@@ -9,10 +9,6 @@ try {
     die();
 }
 $data = $stmt->fetchAll();
-<<<<<<< HEAD
-=======
-
->>>>>>> 783c535999a21fc2c09fc813c26b1677c180520b
 foreach ($data as $answer){
     $answersTab[$answer['value']] = $answer['name'];
     $answersTabValue[$answer['value']] = $answer['value'];
