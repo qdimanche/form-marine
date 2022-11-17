@@ -16,7 +16,6 @@ $questionID = $numQuestion;
 require __DIR__.'/controller/getAllCategories.php';
 $categoriesList = $res;
 require_once './controller/getQuestion.php';
-var_dump($res);
 ?>
 
 
@@ -31,7 +30,7 @@ var_dump($res);
     </div>
     <div class="flex flex-col space-y-2 relative w-1/2">
       <label for="categories">Modifier la catégorie</label>
-      <select name="categories" id="categories">
+      <select name="categories" id="categories2">
           <option value="<?php echo $res['categoryID'] ?>" selected hidden><?php echo $res['categoryName']?></option>
           <?php foreach ($categoriesList as $category): ?>
           <option value="<?php echo $category['id']  ?>"><?php echo $category['name'] ?></option>
@@ -56,7 +55,7 @@ var_dump($res);
         <div class="flex flex-col space-y-2 relative">
           <label for="bareme<?php echo $i ?>">Nb points</label>
           <select name="bareme<?php echo $i ?>" id="bareme<?php echo $i ?>" class="w-full">
-              <option value="" selected disabled hidden><?php echo $res['answer'.$i."Value"] ?></option>
+              <option value="<?php echo $res['answer'.$i."Value"] ?>" selected hidden><?php echo $res['answer'.$i."Value"] ?></option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
