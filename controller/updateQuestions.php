@@ -4,10 +4,10 @@ var_dump($_POST);
 require dirname(__DIR__).'/config/connect.php';
 if ($_POST['question']) {
     $question = $_POST['question'];
-    $categoryId = $_POST['categoriesId'];
+    $categoryID = $_POST['categoriesID'];
     $id = intval($_POST['id']);
     var_dump($id);
-    $stmt = $db->prepare("UPDATE `questions` SET `questionID`='$id',`name`='$question',`categoryID`='$categoryId'");
+    $stmt = $db->prepare("UPDATE `questions` SET `questionID`='$id',`name`='$question',`categoryID`='$categoryID'");
     try {
         $res = $stmt->execute();
     } catch (PDOException $e) {

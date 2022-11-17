@@ -16,7 +16,7 @@ $questionID = $numQuestion;
 require __DIR__.'/controller/getAllCategories.php';
 $categoriesList = $res;
 require_once './controller/getQuestion.php';
-
+var_dump($res);
 ?>
 
 
@@ -32,7 +32,7 @@ require_once './controller/getQuestion.php';
     <div class="flex flex-col space-y-2 relative w-1/2">
       <label for="categories">Modifier la catégorie</label>
       <select name="categories" id="categories">
-          <option value="<?php echo $res['categoryID'] ?>" selected disabled hidden><?php echo $res['categoryName']?></option>
+          <option value="<?php echo $res['categoryID'] ?>" selected hidden><?php echo $res['categoryName']?></option>
           <?php foreach ($categoriesList as $category): ?>
           <option value="<?php echo $category['id']  ?>"><?php echo $category['name'] ?></option>
           <?php endforeach; ?>
@@ -48,7 +48,7 @@ require_once './controller/getQuestion.php';
       <div class="flex space-x-6 pt-4 relative justify-between">
           <div class="flex flex-col space-y-2 w-4/5">
               <label for="answer<?php echo $res['answer'.$i.'Value'] ?>">Modifier votre réponse <?php echo $res['answer'.$i."Value"] ?></label>
-              <input id="answer<?php echo $res['answer'.$i.'Value'] ?>" type="text" value="<?php echo $res['answer'.$i] ?>" >
+              <input name="answer<?php echo $res['answer'.$i.'Value'] ?>" id="answer<?php echo $res['answer'.$i.'Value'] ?>" type="text" value="<?php echo $res['answer'.$i] ?>" >
           </div>
 
           <div class="flex w-1/5 items-center relative">
