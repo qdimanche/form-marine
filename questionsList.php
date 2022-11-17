@@ -33,7 +33,11 @@ require_once __DIR__.'/controller/getAllQuestions.php';
                             <?php $iterator++ ?>
                         </div>
                         <input type="hidden" name="numQuestion" value="<?php echo $question['questionID'] ?>">
-                        <button type="submit" class="bg-[#3D5A80]/80 hover:bg-[#3D5A80] duration-300 text-white px-2 py-3 rounded-[10px] text-sm w-1/5">Modifier</button>
+                        <div class="space-x-6 flex w-1/5">
+                            <button type="submit" name="delete" class="bg-[#3D5A80]/80 hover:bg-[#3D5A80] duration-300 text-white px-2 py-3 rounded-[10px] text-sm w-1/2">Modifier</button>
+                            <button type="submit" name="modify" class="bg-[#3D5A80]/80 hover:bg-[#3D5A80] duration-300 text-white px-2 py-3 rounded-[10px] text-sm w-1/2">Supprimer</button>
+                        </div>
+
                     </div>
                 </div>
             </form>
