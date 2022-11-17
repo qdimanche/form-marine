@@ -25,16 +25,6 @@ try {
     die();
 }
 
-$query = "SELECT LAST_INSERT_ID()";
-$stmt = $db->prepare($query);
-try {
-    $stmt->execute();
-} catch (PDOException $e) {
-    print "Error! : " . $e->getMessage() . "<br/>";
-    die();
-}
-$res = $stmt->fetchAll();
-var_dump($res);
 
 
 die();
