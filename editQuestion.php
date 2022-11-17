@@ -53,7 +53,7 @@ var_dump($res);
                 <input name="answer<?php echo $res['answer' . $i . 'Value'] ?>"
                        id="answer<?php echo $res['answer' . $i . 'Value'] ?>" type="text"
                        value="<?php echo $res['answer' . $i] ?>">
-                       <input name="answerID<?php echo $res['answerID'.$i] ?>" id="answerID<?php echo $res['answer'.$i] ?>" type="hidden" value="<?php echo $res['answerID'.$i] ?>">
+                       <input name="answerID<?php echo $i ?>" id="answerID<?php echo $i ?>" type="hidden" value="<?php echo $res['answerID'.$i] ?>">
             </div>
 
             <div class="flex w-1/5 items-center relative">
