@@ -22,7 +22,7 @@ require_once __DIR__ . '/controller/getAllResults.php';
                     <span class="w-4/5">Résultat <?php echo $iterator ?></span>
                     <div class="flex space-x-6">
                         <span class="font-bold">Nombre de points :</span>
-                        <span><?php echo $result['average'] ?></span>
+                        <span><?php echo $result?></span>
                     </div>
                 </div>
             </div>
