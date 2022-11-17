@@ -18,6 +18,7 @@ require_once __DIR__ . '/controller/getAllResults.php';
         require 'auth.php';
         $iterator = 1;
         foreach ($res as $result): ?>
+        
             <div class="flex flex-col">
                 <div class="flex items-center justify-between py-8 border-b border-slate-200">
                     <span class="w-1/2">Résultat <?php echo $iterator ?></span>
