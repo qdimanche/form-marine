@@ -9,6 +9,7 @@
 <body>
 
 <?php require 'header.php';
+require 'auth.php';
 
 $numQuestion = intval($_POST['numQuestion']);
 $questionID = $numQuestion;
