@@ -13,7 +13,8 @@ require_once __DIR__.'/controller/getAllQuestions.php';
 ?>
 
     <div class="lg:mx-60 mx-20 pb-16 pt-32">
-        <?php foreach ($res as $question):?>
+        <?php foreach ($res as $question):
+          if($question !== $res["nbQuestion"]):  ?>
             <form method="post" action="editQuestion.php" class="space-y-6 flex flex-col ">
                 <div class="flex flex-col">
                     <div class="flex items-center py-8 border-b border-slate-200">
@@ -23,7 +24,7 @@ require_once __DIR__.'/controller/getAllQuestions.php';
                     </div>
                 </div>
             </form>
-        <?php endforeach;?>
+        <?php endif; endforeach;?>
     </div>
 
 
