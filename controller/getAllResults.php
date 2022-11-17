@@ -15,5 +15,4 @@ foreach($data as $result){
     $res[$iterator] = $result['average'];
     $iterator++;
 }
-var_dump($res);
 ?>
