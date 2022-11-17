@@ -1,13 +1,14 @@
 <?php
 require dirname(__DIR__).'/config/connect.php';
 $questionId = $_POST['questionID'];
+//var_dump($_POST);
+
+$query = "DELETE FROM `answers` WHERE questionID = '$questionId'; DELETE FROM questions WHERE questionID = '$questionId'; ";
+$stmt = $db->prepare($query);
+var_dump($query);
 try {
-    if ($query = $db->prepare("DELETE FROM answers WHERE questionID = :id; DELETE FROM questions WHERE questionID = :id; ")) {
-        $query->bindParam(":id", $questionId);
-        if ($query->execute()) {
-            header('Location: ../questionsList.php');
-        }
-    }
-} catch (PDOException $e) {
+    $stmt = $stmt->execute();
+}
+catch (PDOException $e) {
     echo 'Error : ' . $e->getMessage() . '<br/>';
 }
