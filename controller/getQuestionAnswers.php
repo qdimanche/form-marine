@@ -14,5 +14,6 @@ var_dump($data);
 
 foreach ($data as $answer){
     $answersTab[$answer['value']] = $answer['name'];
+    $answersTabValue[$answer['value']] = $answer['value'];
 }
 ?>
