@@ -22,11 +22,12 @@ require_once './controller/getQuestion.php';
 
 
 
-<form action="" class="space-y-6 flex flex-col lg:mx-60 mx-20 pt-32 pb-16  ">
+<form method="post" action="./controller/updateQuestions.php" class="space-y-6 flex flex-col lg:mx-60 mx-20 pt-32 pb-16  ">
   <div class="flex space-x-4 pb-10 border-b border-slate-200">
     <div class="flex flex-col space-y-2 w-1/2">
       <label for="question">Modifier la question<?php echo ' ' . $res['questionID']?></label>
-      <input id="question" type="text" value="<?php echo $res['name']?>" >
+      <input name="question" id="question" type="text" value="<?php echo $res['name']?>">
+        <input type="hidden" name="id" value="<?php echo $questionID ?>">
     </div>
     <div class="flex flex-col space-y-2 relative w-1/2">
       <label for="categories">Modifier la catégorie</label>
@@ -53,8 +54,8 @@ require_once './controller/getQuestion.php';
           <div class="flex w-1/5 items-center relative">
       <div class="flex w-fit">
         <div class="flex flex-col space-y-2 relative">
-          <label for="baremeQuestion1">Nb points</label>
-          <select name="categories" id="baremeQuestion1" class="w-full">
+          <label for="bareme<?php echo $i ?>">Nb points</label>
+          <select name="bareme<?php echo $i ?>" id="bareme<?php echo $i ?>" class="w-full">
               <option value="" selected disabled hidden><?php echo $res['answer'.$i."Value"] ?></option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -74,13 +75,8 @@ require_once './controller/getQuestion.php';
 
   <?php endfor; ?>
 
-
-
-
-
   <div class="flex space-x-6 !mt-12">
     <button type="submit" class="bg-[#3D5A80]/80 hover:bg-[#3D5A80] duration-300 text-white px-2 py-3 rounded-[10px] text-sm w-1/2">Modifier question</button>
-    <a href="" class="bg-[#3D5A80]/60 hover:bg-[#3D5A80]/70 duration-300 text-white px-2 py-3 rounded-[10px] text-sm w-1/2 text-center">Ajouter une question</a>
   </div>
 </form>
 
