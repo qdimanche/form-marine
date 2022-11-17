@@ -13,6 +13,11 @@ require_once __DIR__.'/controller/getAllQuestions.php';
 ?>
 
     <div class="lg:mx-60 mx-20 pb-16 pt-32">
+
+        <div class="flex justify-center space-x-6 !mt-12 mb-12">
+            <a href="questionsList.php" class="bg-[#3D5A80]/60 hover:bg-[#3D5A80]/70 duration-300 text-white px-2 py-3 rounded-[10px] text-sm w-1/2 text-center">Liste des questions</a>
+        </div>
+
         <?php foreach ($res as $question):
           if($question !== $res["nbQuestion"]):  ?>
             <form method="post" action="editQuestion.php" class="space-y-6 flex flex-col ">
