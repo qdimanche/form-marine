@@ -9,21 +9,29 @@
 <body>
 
 <?php require 'header.php';
+require 'auth.php';
 require_once __DIR__.'/controller/getAllQuestions.php';
 ?>
 
     <div class="lg:mx-60 mx-20 pb-16 pt-32">
 
-        <div class="flex justify-center space-x-6 !mt-12 mb-12">
-            <a href="questionsList.php" class="bg-[#3D5A80]/60 hover:bg-[#3D5A80]/70 duration-300 text-white px-2 py-3 rounded-[10px] text-sm w-1/2 text-center">Liste des questions</a>
+        <div class="flex justify-between items-center !mt-12 pb-6 mb-8 border-b border-slate-500">
+            <span class="text-xl font-bold px-2 py-3 rounded-[10px] text-sm text-center">Liste des questions</span>
+            <a href="admin.php" class="bg-[#3D5A80]/60 hover:bg-[#3D5A80]/70 duration-300 text-white text-center px-2 py-3 rounded-[10px] text-sm w-1/5">Ajouter une question</a>
         </div>
 
-        <?php foreach ($res as $question):
+        <?php
+        $iterator = 1;
+        foreach ($res as $question):
           if($question !== $res["nbQuestion"]):  ?>
             <form method="post" action="editQuestion.php" class="space-y-6 flex flex-col ">
                 <div class="flex flex-col">
-                    <div class="flex items-center py-8 border-b border-slate-200">
-                        <span class="w-4/5"><?php echo $question['name']?></span>
+                    <div class="flex items-center justify-between py-8 border-b border-slate-200">
+                        <div class="flex space-x-2">
+                            <span>Q<?php echo $iterator?>:</span>
+                            <span><?php echo $question['name']?></span>
+                            <?php $iterator++ ?>
+                        </div>
                         <input type="hidden" name="numQuestion" value="<?php echo $question['questionID'] ?>">
                         <button type="submit" class="bg-[#3D5A80]/80 hover:bg-[#3D5A80] duration-300 text-white px-2 py-3 rounded-[10px] text-sm w-1/5">Modifier</button>
                     </div>
