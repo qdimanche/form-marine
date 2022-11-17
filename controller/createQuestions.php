@@ -4,8 +4,17 @@ var_dump($_POST);
 require dirname(__DIR__).'/config/connect.php';
 if ($_POST['question']) {
     $question = $_POST['question'];
+    $arrayQuestion = str_split($question);
+    $formatedQuestion = "";
+    foreach ($arrayQuestion as $char) {
+      if ($char == "'"){
+        $char = "\'";
+      }
+      $formatedQuestion .= $char;
+    }
     $categoryId = $_POST['categories'];
-    $stmt = $db->prepare("INSERT INTO `questions`(`name`, `categoryID`) VALUES ('$question','$categoryId')");
+    $query = "INSERT INTO `questions`(`name`, `categoryID`) VALUES ('$formatedQuestion','$categoryId')";
+    $stmt = $db->prepare($query);
     try {
         $res = $stmt->execute();
     } catch (PDOException $e) {
@@ -17,6 +26,7 @@ $query = "SELECT LAST_INSERT_ID()";
 $lastId = $db->prepare($query);
 try {
     $lastId->execute();
+    var_dump($lastId->fetch());
 } catch (PDOException $e) {
     print "Error! : " . $e->getMessage() . "<br/>";
     die();
