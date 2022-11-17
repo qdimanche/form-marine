@@ -29,5 +29,5 @@ var_dump($query);
            echo "Erreur : " . $e->getMessage() . "<br/>";
        }
    }
-   //header('Location: ../index.php');
+   header('Location: ../index.php');
 }
