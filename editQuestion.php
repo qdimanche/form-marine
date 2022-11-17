@@ -17,7 +17,6 @@ $questionID = $numQuestion;
 require __DIR__ . '/controller/getAllCategories.php';
 $categoriesList = $res;
 require_once './controller/getQuestion.php';
-var_dump($res);
 ?>
 
 

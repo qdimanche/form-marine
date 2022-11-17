@@ -38,7 +38,7 @@ require 'header.php';?>
     <div class="flex flex-col space-y-2 relative w-1/4">
       <label for="baremeQuestion1">Nb points</label>
       <select name="bareme1" id="baremeQuestion1">
-        <option value="1">1</option>
+        <option selected value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
@@ -55,7 +55,7 @@ require 'header.php';?>
       <label for="baremeQuestion2">Nb points</label>
       <select name="bareme2" id="baremeQuestion2">
         <option value="1">1</option>
-        <option value="2">2</option>
+        <option selected value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
@@ -72,7 +72,7 @@ require 'header.php';?>
       <select name="bareme3" id="baremeQuestion3">
         <option value="1">1</option>
         <option value="2">2</option>
-        <option value="3">3</option>
+        <option selected value="3">3</option>
         <option value="4">4</option>
       </select>
       <img src="assets/images/icons8-chevron-96.png" alt="" class="absolute w-6 bottom-2 right-2 pointer-events-none">
@@ -89,7 +89,7 @@ require 'header.php';?>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
-        <option value="4">4</option>
+        <option selected value="4">4</option>
       </select>
       <img src="assets/images/icons8-chevron-96.png" alt="" class="absolute w-6 bottom-2 right-2 pointer-events-none">
     </div>
