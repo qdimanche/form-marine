@@ -1,5 +1,4 @@
 <?php
-
 require dirname(__DIR__).'/config/connect.php';
 $query = "Select * from answers WHERE questionID = " . $questionID;
 //ECHO $query;
@@ -12,9 +11,8 @@ try {
 }
 $data = $stmt->fetchAll();
 //var_dump($data);
-$iterator = 0;
+
 foreach ($data as $answer){
-    $answersTab[$iterator] = $answer['name'];
-    $iterator++;
+    $answersTab[$answer['value']] = $answer['name'];
 }
 ?>

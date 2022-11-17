@@ -17,35 +17,21 @@ var_dump($_POST);?>
   <div class="flex items-center pb-6 border-b border-slate-500">
       <img src="assets/images/trophy.jpg" class="w-[100px]" alt="">
       <div class="flex flex-col">
-          <span class="text-[#FFBE1E] font-bold text-xl">5000 points</span>
-          <p>Félicitations vous êtes dans la moyenne</p>
+          <span class="text-[#FFBE1E] font-bold text-xl"><?php echo $_POST['total']." points"?></span>
+          <p><?php echo $_POST['content']?></p>
       </div>
   </div>
 
   <div class="w-full flex justify-between items-center py-6 border-b border-slate-200">
       <div class="flex flex-col">
-          <span>Catégorie 1</span>
+          <span>Toutes catégories confondues</span>
           <p>Nombre bonne réponses</p>
       </div>
       <div>
-          41 pts
+          51 pts
       </div>
 
   </div>
-
-
-    <div class="w-full flex justify-between items-center py-6 border-b border-slate-200">
-        <div class="flex flex-col">
-            <span>Catégorie 2</span>
-            <p>Nombre bonne réponses</p>
-        </div>
-        <div>
-            41 pts
-        </div>
-
-    </div>
-
-
 
 </div>
 

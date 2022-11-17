@@ -24,10 +24,12 @@ if (isset($_POST['nbQuestion'])) {
         $graduationID = $graduation['0'];
       }
     }
+    $query = "INSERT INTO results VALUES (NULL,'$value','$total','$content');";
+    $stmt = $db->prepare($query);
     try {
-        $query = "INSERT INTO `results` VALUES (NULL,".$value.",".$total ."," . $content . ")";
-        }
-    } catch (PDOException $e) {
+      $stmt = $stmt->execute();
+              }
+     catch (PDOException $e) {
         echo 'Error : ' . $e->getMessage() . '<br/>';
     }
   ?>
