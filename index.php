@@ -17,7 +17,7 @@ $listQuestionsIDs = json_encode($res);
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-
+<div>&eacute;</div>
 
 
     <?php require 'header.php'; ?>
@@ -53,8 +53,7 @@ $listQuestionsIDs = json_encode($res);
 
         <button type="submit" id="btn_Questions" class="bg-[#3D5A80]/80 duration-300 hover:bg-[#3D5A80] text-white px-2 py-3 rounded-[10px] text-sm w-full !mt-6 w-1/4 items-center">Envoyer</button>
 
-
-<script src='scriptQuestions.js'></script>
+<script src='script.js'></script>
 
 </body>
 </html>

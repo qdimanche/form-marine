@@ -10,7 +10,7 @@ try {
     die();
 }
 $data = $stmt->fetchAll();
-//var_dump($data);
+var_dump($data);
 
 foreach ($data as $answer){
     $answersTab[$answer['value']] = $answer['name'];

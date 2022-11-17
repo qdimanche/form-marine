@@ -1,10 +1,11 @@
 <?php
 
+var_dump($_POST);
 require dirname(__DIR__).'/config/connect.php';
 if ($_POST['question']) {
     $question = $_POST['question'];
     $categoryId = $_POST['categories'];
-    $stmt = $db->prepare("INSERT INTO questions (name, categoryID) VALUES ($question, $categoryId)");
+    $stmt = $db->prepare("INSERT INTO `questions`(`name`, `categoryID`) VALUES ('$question','$categoryId')");
     try {
         $res = $stmt->execute();
     } catch (PDOException $e) {
@@ -20,11 +21,19 @@ try {
     print "Error! : " . $e->getMessage() . "<br/>";
     die();
 }
-$res = $lastId->fetchAll();
-$lastIdQuestion = $res[0][0];
+$res = $lastId->fetch();
+$lastIdQuestion = $res;
 
-if ($_POST['response1'] && $_POST['baremeQuestion1']) {
-    $response = $_POST['response1'];
-    $value = $_POST['baremeQuestion1'];
-    $insertAnswer1 = $db->prepare("INSERT INTO answer (name, questionID) VALUES ($response . " - " . $value, $lastIdQuestion)");
+for ($i = 1; $i <= 4; $i++) {
+    if ($_POST['response' . $i] && $_POST['bareme' . $i]) {
+        $response = $_POST['response' . $i];
+        $value = $_POST['bareme' . $i];
+        $insertAnswer = $db->prepare("INSERT INTO answers (name, value, questionID) VALUES ('$response', '$value', '$lastIdQuestion[0]')");
+        try {
+            $res = $insertAnswer->execute();
+        } catch (PDOException $e) {
+            echo "Erreur : " . $e->getMessage() . "<br/>";
+        }
+    }
+    header('Location: ../index.php');
 }
