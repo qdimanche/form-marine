@@ -9,8 +9,7 @@
 <body>
 
 
-<?php require 'header.php';
-var_dump($_POST);?>
+<?php require 'header.php'; ?>
 
 
 <div class="flex flex-col justify-center min-h-screen w-1/3 mx-auto">
