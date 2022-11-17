@@ -14,5 +14,6 @@ $data = $stmt->fetchAll();
 
 foreach ($data as $answer){
     $answersTab[$answer['value']] = $answer['name'];
+    $answersTabValue[$answer['value']] = $answer['value'];
 }
 ?>

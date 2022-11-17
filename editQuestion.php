@@ -17,7 +17,6 @@ require __DIR__.'/controller/getAllCategories.php';
 $categoriesList = $res;
 require_once './controller/getQuestion.php';
 
-var_dump($res);
 ?>
 
 
@@ -41,32 +40,41 @@ var_dump($res);
     </div>
   </div>
 
-  <div class="flex space-x-6 pt-4 relative justify-between">
-    <div class="flex flex-col space-y-2 w-4/5">
-      <label for="response1">Modifier votre réponse 1</label>
-      <input id="response1" type="text" value="<?php echo $res['answer1'] ?>" >
-    </div>
-    <div class="flex w-1/5 items-center relative">
+  <?php
+
+  for ($i = 1; $i <= 4; $i++): ?>
+
+      <div class="flex space-x-6 pt-4 relative justify-between">
+          <div class="flex flex-col space-y-2 w-4/5">
+              <label for="response1">Modifier votre réponse <?php echo $res['answer'.$i."Value"] ?></label>
+              <input id="response1" type="text" value="<?php echo $res['answer'.$i] ?>" >
+          </div>
+
+          <div class="flex w-1/5 items-center relative">
       <div class="flex w-fit">
         <div class="flex flex-col space-y-2 relative">
           <label for="baremeQuestion1">Nb points</label>
           <select name="categories" id="baremeQuestion1" class="w-full">
-              <option value="" selected disabled hidden><?php echo $res['answer1']?></option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-          </select>
-          <img src="assets/images/icons8-chevron-96.png" alt="" class="absolute w-6 bottom-2 right-2 pointer-events-none">
-        </div>
-        <div class="">
-          <img src="assets/images/icons8-multiply-96.png" class="w-4  cursor-pointer bottom-3 right-0 absolute" alt="">
-        </div>
-
-      </div>
+              <option value="" selected disabled hidden><?php echo $res['answer'.$i."Value"] ?></option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    </select>
+    <img src="assets/images/icons8-chevron-96.png" alt="" class="absolute w-6 bottom-2 right-2 pointer-events-none">
+    </div>
+    <div class="">
+        <img src="assets/images/icons8-multiply-96.png" class="w-4  cursor-pointer bottom-3 right-0 absolute" alt="">
+    </div>
 
     </div>
-  </div>
+
+    </div>
+    </div>
+
+  <?php endfor; ?>
+
+
 
 
 

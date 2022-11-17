@@ -20,7 +20,7 @@ $listQuestionsIDs = json_encode($res);
 
 
 
-    <?php require 'header.php';?>
+    <?php require 'header.php'; ?>
     <form onsubmit="return verifRadio(<?php echo $listQuestionsIDs ?>)" method="post" action="./controller/createResult.php" class="flex flex-col space-y-6 w-1/4 mx-auto pt-32 pb-16">
 
     <?php
