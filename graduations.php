@@ -37,7 +37,5 @@ require_once __DIR__.'/controller/getAllGraduations.php';
         <?php endforeach;?>
     </div>
 
-
-
 </body>
 </html>

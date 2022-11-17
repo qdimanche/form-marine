@@ -17,7 +17,7 @@ require_once __DIR__.'/controller/getAllQuestions.php';
 
         <div class="flex justify-between items-center !mt-12 pb-6 mb-8 border-b border-slate-500">
             <span class="text-xl font-bold px-2 py-3 rounded-[10px] text-sm text-center">Liste des questions</span>
-            <a href="admin.php" class="bg-[#3D5A80]/60 hover:bg-[#3D5A80]/70 duration-300 text-white text-center px-2 py-3 rounded-[10px] text-sm w-1/5">Ajouter une question</a>
+            <a href="addQuestion.php" class="bg-[#3D5A80]/60 hover:bg-[#3D5A80]/70 duration-300 text-white text-center px-2 py-3 rounded-[10px] text-sm w-1/5">Ajouter une question</a>
         </div>
 
         <?php
