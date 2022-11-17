@@ -11,11 +11,11 @@
 <?php require 'auth.php';
 require 'header.php';?>
 
-<form action="" class="space-y-6 flex flex-col lg:mx-60 mx-20 pt-32 pb-16">
+<form method="post" action="./controller/createQuestions.php" class="space-y-6 flex flex-col lg:mx-60 mx-20 pt-32 pb-16">
   <div class="flex space-x-4 pb-10 border-b border-slate-200">
     <div class="flex flex-col space-y-2 w-1/2">
       <label for="question">Écrire votre question</label>
-      <input id="question" type="text" >
+      <input name="question" id="question" type="text" >
     </div>
     <div class="flex flex-col space-y-2 relative w-1/2">
       <label for="categories">Sélectionner la catégorie</label>
@@ -33,11 +33,11 @@ require 'header.php';?>
   <div class="flex space-x-6 pt-4">
     <div class="flex flex-col space-y-2 w-3/4">
       <label for="response1">Écrire votre réponse 1</label>
-      <input id="response1" type="text" >
+      <input name="response1" id="response1" type="text" >
     </div>
     <div class="flex flex-col space-y-2 relative w-1/4">
       <label for="baremeQuestion1">Nb points</label>
-      <select name="categories" id="baremeQuestion1">
+      <select name="bareme1" id="baremeQuestion1">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -49,11 +49,11 @@ require 'header.php';?>
   <div class="flex space-x-6">
     <div class="flex flex-col space-y-2 w-3/4">
       <label for="response2">Écrire votre réponse 2</label>
-      <input id="response2" type="text" >
+      <input name="response2" id="response2" type="text" >
     </div>
     <div class="flex flex-col space-y-2 relative w-1/4">
       <label for="baremeQuestion2">Nb points</label>
-      <select name="categories" id="baremeQuestion2">
+      <select name="bareme2" id="baremeQuestion2">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -65,11 +65,11 @@ require 'header.php';?>
   <div class="flex space-x-6">
     <div class="flex flex-col space-y-2 w-3/4">
       <label for="response3">Écrire votre réponse 3</label>
-      <input id="response3" type="text" >
+      <input name="response3" id="response3" type="text" >
     </div>
     <div class="flex flex-col space-y-2 relative w-1/4">
       <label for="baremeQuestion3">Nb points</label>
-      <select name="categories" id="baremeQuestion3">
+      <select name="bareme3" id="baremeQuestion3">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -81,11 +81,11 @@ require 'header.php';?>
   <div class="flex space-x-6">
     <div class="flex flex-col space-y-2 w-3/4">
       <label for="repsonse4">Écrire votre réponse 4</label>
-      <input id="repsonse4" type="text" >
+      <input name="response4" id="repsonse4" type="text" >
     </div>
     <div class="flex flex-col space-y-2 relative w-1/4">
       <label for="baremeQuestion4">Nb points</label>
-      <select name="categories" id="baremeQuestion4">
+      <select name="bareme4" id="baremeQuestion4">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
