@@ -15,6 +15,7 @@ require_once __DIR__ . '/controller/getAllResults.php';
 <div class="lg:mx-60 mx-20 pb-16 pt-32">
     <form>
         <?php
+        require 'auth.php';
         $iterator = 1;
         foreach ($res as $result): ?>
             <div class="flex flex-col">
