@@ -1,6 +1,6 @@
 <?php
 require dirname(__DIR__).'/config/connect.php';
-$questionId = $_POST['questionId'];
+$questionId = $_POST['questionID'];
 try {
     if ($query = $db->prepare("DELETE FROM questions WHERE questionID = :id; DELETE FROM answers WHERE questionID = :id")) {
         $query->bindParam(":id", $questionId);
