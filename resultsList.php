@@ -32,7 +32,7 @@ require 'auth.php';
         <?php $iterator++; endforeach;  ?>
     </form>
     <form method="post" action="./controller/deleteAllResults.php">
-        <button type="submit" class="bg-[#3D5A80]/80 hover:bg-[#3D5A80] duration-300 text-white px-2 py-3 rounded-[10px] text-sm w-1/5 mt-10">
+        <button type="submit" class="bg-[#293241]/80 duration-300 hover:bg-[#293241] text-white px-2 py-3 rounded-[10px] text-sm w-1/5 mt-10">
             Supprimer les résultats
         </button>
     </form>
