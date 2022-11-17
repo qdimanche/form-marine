@@ -24,10 +24,18 @@ $listQuestionsIDs = json_encode($res);
 
     <?php
     require_once __DIR__.'/controller/getAllQuestions.php';
+    $iterator = 1;
     foreach ($res as $question):
     if($question !== $res["nbQuestion"]):?>
             <div class="flex flex-col space-y-2 ">
-                <span><?php echo $question['name']?></span>
+
+                <div class="flex space-x-2">
+                    <span>Q<?php echo $iterator?>:</span>
+                    <span><?php echo $question['name']?></span>
+                    <?php $iterator++ ?>
+                </div>
+
+
 
                 <div class="flex space-x-2 ">
                     <input type="radio" id="response1<?php echo $question['questionID'] ?>" name="question<?php echo $question['questionID'] ?>" value="1">
