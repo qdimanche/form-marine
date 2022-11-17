@@ -29,4 +29,8 @@ $res = [];
     $res['answer2Value'] = $answersTabValue[2];
     $res['answer3Value'] = $answersTabValue[3];
     $res['answer4Value'] = $answersTabValue[4];
+    $res['answerID1'] = $answersTabId[1];
+    $res['answerID2'] = $answersTabId[2];
+    $res['answerID3'] = $answersTabId[3];
+    $res['answerID4'] = $answersTabId[4];
 

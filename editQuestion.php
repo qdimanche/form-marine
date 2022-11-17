@@ -16,6 +16,7 @@ $questionID = $numQuestion;
 require __DIR__.'/controller/getAllCategories.php';
 $categoriesList = $res;
 require_once './controller/getQuestion.php';
+var_dump($res);
 ?>
 
 
@@ -48,6 +49,7 @@ require_once './controller/getQuestion.php';
           <div class="flex flex-col space-y-2 w-4/5">
               <label for="answer<?php echo $res['answer'.$i.'Value'] ?>">Modifier votre réponse <?php echo $res['answer'.$i."Value"] ?></label>
               <input name="answer<?php echo $res['answer'.$i.'Value'] ?>" id="answer<?php echo $res['answer'.$i.'Value'] ?>" type="text" value="<?php echo $res['answer'.$i] ?>" >
+              <input name="answerID<?php echo $res['answerID'.$i] ?>" id="answerID<?php echo $res['answer'.$i] ?>" type="hidden" value="<?php echo $res['answerID'.$i] ?>">
           </div>
 
           <div class="flex w-1/5 items-center relative">
