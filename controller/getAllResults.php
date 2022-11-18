@@ -12,7 +12,7 @@ try {
 }
 $data = $stmt->fetchAll();
 foreach($data as $result){
-    $res[$iterator] = [$result['average'],$result['addDate'];
+    $res[$iterator] = [$result['average'],$result['addDate']];
     $iterator++;
 }
 ?>
