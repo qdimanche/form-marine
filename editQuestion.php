@@ -17,16 +17,18 @@ $questionID = $numQuestion;
 require __DIR__ . '/controller/getAllCategories.php';
 $categoriesList = $res;
 require_once './controller/getQuestion.php';
+require_once './controller/getQuestionAnswers.php';
+$listResponseIDs=json_encode($answersTabId);
 ?>
 
 
 
 
-<form method="post" action="./controller/updateQuestions.php" class="space-y-6 flex flex-col lg:mx-60 mx-20 pt-32 pb-16  ">
+<form method="post" onsubmit="return verifAnswers(<?php echo $listResponseIDs ?>)" action="./controller/updateQuestions.php" class="space-y-6 flex flex-col lg:mx-60 mx-20 pt-32 pb-16  ">
   <div class="flex space-x-4 pb-10 border-b border-slate-200">
     <div class="flex flex-col space-y-2 w-1/2">
-      <label for="question">Modifier la question<?php echo ' ' . $res['questionID']?></label>
-      <input name="question" id="question" type="text" value="<?php echo $res['name']?>">
+      <label for="question">Modifier la question</label>
+      <input name="question" id="question" type="text" value="<?php echo $res['name']?>" required>
         <input type="hidden" name="id" value="<?php echo $questionID ?>">
     </div>
     <div class="flex flex-col space-y-2 relative w-1/2">
@@ -52,7 +54,7 @@ require_once './controller/getQuestion.php';
                     réponse <?php echo $res['answer' . $i . "Value"] ?></label>
                 <input name="answer<?php echo $res['answer' . $i . 'Value'] ?>"
                        id="answer<?php echo $res['answer' . $i . 'Value'] ?>" type="text"
-                       value="<?php echo $res['answer' . $i] ?>">
+                       value="<?php echo $res['answer' . $i] ?>" required>
                        <input name="answerID<?php echo $i ?>" id="answerID<?php echo $i ?>" type="hidden" value="<?php echo $res['answerID'.$i] ?>">
             </div>
 

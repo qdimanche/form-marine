@@ -15,7 +15,7 @@ require 'header.php';?>
   <div class="flex space-x-4 pb-10 border-b border-slate-200">
     <div class="flex flex-col space-y-2 w-1/2">
       <label for="question">Écrire votre question</label>
-      <input name="question" id="question" type="text" >
+      <input name="question" id="question" type="text" required>
     </div>
     <div class="flex flex-col space-y-2 relative w-1/2">
       <label for="categories">Sélectionner la catégorie</label>
@@ -33,7 +33,7 @@ require 'header.php';?>
   <div class="flex space-x-6 pt-4">
     <div class="flex flex-col space-y-2 w-3/4">
       <label for="response1">Écrire votre réponse 1</label>
-      <input name="response1" id="response1" type="text" >
+      <input name="response1" id="response1" type="text" required>
     </div>
     <div class="flex flex-col space-y-2 relative w-1/4">
       <label for="baremeQuestion1">Nb points</label>
@@ -49,7 +49,7 @@ require 'header.php';?>
   <div class="flex space-x-6">
     <div class="flex flex-col space-y-2 w-3/4">
       <label for="response2">Écrire votre réponse 2</label>
-      <input name="response2" id="response2" type="text" >
+      <input name="response2" id="response2" type="text" required>
     </div>
     <div class="flex flex-col space-y-2 relative w-1/4">
       <label for="baremeQuestion2">Nb points</label>
@@ -65,7 +65,7 @@ require 'header.php';?>
   <div class="flex space-x-6">
     <div class="flex flex-col space-y-2 w-3/4">
       <label for="response3">Écrire votre réponse 3</label>
-      <input name="response3" id="response3" type="text" >
+      <input name="response3" id="response3" type="text" required>
     </div>
     <div class="flex flex-col space-y-2 relative w-1/4">
       <label for="baremeQuestion3">Nb points</label>
@@ -81,7 +81,7 @@ require 'header.php';?>
   <div class="flex space-x-6">
     <div class="flex flex-col space-y-2 w-3/4">
       <label for="repsonse4">Écrire votre réponse 4</label>
-      <input name="response4" id="repsonse4" type="text" >
+      <input name="response4" id="repsonse4" type="text" required>
     </div>
     <div class="flex flex-col space-y-2 relative w-1/4">
       <label for="baremeQuestion4">Nb points</label>
