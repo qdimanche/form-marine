@@ -18,7 +18,7 @@ require_once './controller/getAllGraduations.php';
 
 
 
-<form method="post" class="space-y-6 flex flex-col lg:mx-60 mx-20 pt-32 pb-16  ">
+<form method="post" action="./controller/updateGraduation.php" class="space-y-6 flex flex-col lg:mx-60 mx-20 pt-32 pb-16">
   <div class="flex space-x-4 pb-10 border-b border-slate-200">
     <div class="flex flex-col space-y-2 w-full">
       <label for="question">Modifier l'appréciation</label>
