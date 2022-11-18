@@ -18,7 +18,7 @@ $listQuestionsIDs = json_encode($res);
 </head>
 <body>
 <?php require 'header.php'; ?>
-<form onsubmit="return verifRadio(<?php echo $listQuestionsIDs ?>)" method="post" action="./controller/createResult.php"
+<form method="post" action="./controller/createResult.php"
       class="flex flex-col w-1/2 mx-auto pt-32 pb-16">
 
     <?php
@@ -42,8 +42,8 @@ $listQuestionsIDs = json_encode($res);
         foreach ($listAnswer as $answer): ?>
             
             <div class="flex space-x-2 mb-2">
-                <input type="radio" id="response<?php echo $question['questionID'] ?>"
-                       name="question<?php echo $question['questionID'] ?>" value="<?php echo $answer ?>">
+                <input type="radio" id="response<?php echo $question['questionID'] ?> "
+                       name="question<?php echo $question['questionID'] ?>" value="<?php echo $answer ?>" required>
                 <label for="response<?php echo $answer.$question['questionID'] ?>"><?php echo $question['answer'.$answer] ?></label>
             </div>
         <?php endforeach; ?>

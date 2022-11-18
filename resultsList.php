@@ -25,7 +25,7 @@ require 'auth.php';
                     <span class="w-1/2">Résultat <?php echo $iterator ?></span>
                     <div class="flex space-x-4 w-1/2">
                         <span class="font-bold">Nombre de points :</span>
-                        <span><?php echo $result?></span>
+                        <span><?php echo $result[0]?></span>
                     </div>
                 </div>
             </div>
