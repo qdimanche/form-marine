@@ -17,16 +17,14 @@ $listQuestionsIDs = json_encode($res);
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-
-
 <?php require 'header.php'; ?>
 <form onsubmit="return verifRadio(<?php echo $listQuestionsIDs ?>)" method="post" action="./controller/createResult.php"
       class="flex flex-col w-1/2 mx-auto pt-32 pb-16">
 
     <?php
-    require_once __DIR__ . '/controller/getAllQuestions.php';
+    require_once __DIR__ . '/controller/getAllQuestionsRandom.php';
+
     $iterator = 1;
-    var_dump($res);
     foreach ($res as $question):
         if ($question !== $res["nbQuestion"]):?>
             <div class="flex flex-col py-8 border-b border-slate-200">
@@ -41,7 +39,6 @@ $listQuestionsIDs = json_encode($res);
                <?php
                $listAnswer = [1,2,3,4];
             shuffle($listAnswer);
-            var_dump($listAnswer);
         foreach ($listAnswer as $answer): ?>
             
             <div class="flex space-x-2 mb-1">

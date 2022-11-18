@@ -1,6 +1,5 @@
 <?php
 
-var_dump($_POST);
 require dirname(__DIR__).'/config/connect.php';
 if ($_POST['question']) {
     $question = $_POST['question'];
@@ -26,14 +25,11 @@ $query = "SELECT LAST_INSERT_ID()";
 $lastId = $db->prepare($query);
 try {
     $lastId->execute();
-    var_dump($lastId->fetch());
+    $lastIdQuestion = $lastId->fetch();
 } catch (PDOException $e) {
     print "Error! : " . $e->getMessage() . "<br/>";
     die();
 }
-$res = $lastId->fetch();
-$lastIdQuestion = $res;
-
 for ($i = 1; $i <= 4; $i++) {
     if ($_POST['response' . $i] && $_POST['bareme' . $i]) {
         $response = $_POST['response' . $i];
@@ -46,7 +42,8 @@ for ($i = 1; $i <= 4; $i++) {
             $formatedResponse .= $char;
           }
         $value = $_POST['bareme' . $i];
-        $insertAnswer = $db->prepare("INSERT INTO answers (name, value, questionID) VALUES ('$formatedResponse', '$value', '$lastIdQuestion[0]')");
+        $query = "INSERT INTO answers (name, value, questionID) VALUES ('$formatedResponse', '$value', '$lastIdQuestion[0]')";
+        $insertAnswer = $db->prepare($query);
         try {
             $res = $insertAnswer->execute();
         } catch (PDOException $e) {

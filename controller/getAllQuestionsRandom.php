@@ -29,4 +29,5 @@ foreach ($data as $question) {
     $res[$iteration]['answer4'] = $answersTab[4];
 }
 
+shuffle($res);
 $res['nbQuestion'] = $iteration;
