@@ -38,7 +38,7 @@ $listQuestionsIDs = json_encode($res);
                 </div>
 
 
-               <?php $iterator = 1;
+               <?php
                $listAnswer = [1,2,3,4];
             shuffle($listAnswer);
             var_dump($listAnswer);
