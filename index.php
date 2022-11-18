@@ -26,6 +26,7 @@ $listQuestionsIDs = json_encode($res);
     <?php
     require_once __DIR__ . '/controller/getAllQuestions.php';
     $iterator = 1;
+    var_dump($res);
     foreach ($res as $question):
         if ($question !== $res["nbQuestion"]):?>
             <div class="flex flex-col py-8 border-b border-slate-200">
@@ -37,26 +38,18 @@ $listQuestionsIDs = json_encode($res);
                 </div>
 
 
-                <div class="flex space-x-2 mb-1">
-                    <input type="radio" id="response1<?php echo $question['questionID'] ?>"
-                           name="question<?php echo $question['questionID'] ?>" value="1">
-                    <label for="response1<?php echo $question['questionID'] ?>"><?php echo $question['answer1'] ?></label>
-                </div>
-                <div class="flex space-x-2 mb-1">
-                    <input type="radio" id="response2<?php echo $question['questionID'] ?>"
-                           name="question<?php echo $question['questionID'] ?>" value="2">
-                    <label for="response2<?php echo $question['questionID'] ?>"><?php echo $question['answer2'] ?></label>
-                </div>
-                <div class="flex space-x-2 mb-1">
-                    <input type="radio" id="response3<?php echo $question['questionID'] ?>"
-                           name="question<?php echo $question['questionID'] ?>" value="3">
-                    <label for="response3<?php echo $question['questionID'] ?>"><?php echo $question['answer3'] ?></label>
-                </div>
-                <div class="flex space-x-2">
-                    <input type="radio" id="response4<?php echo $question['questionID'] ?>"
-                           name="question<?php echo $question['questionID'] ?>" value="4">
-                    <label for="response4<?php echo $question['questionID'] ?>"><?php echo $question['answer4'] ?></label>
-                </div>
+               <?php $iterator = 1;
+               $listAnswer = [1,2,3,4];
+            shuffle($listAnswer);
+            var_dump($listAnswer);
+        foreach ($listAnswer as $answer): ?>
+            
+            <div class="flex space-x-2 mb-1">
+                <input type="radio" id="response<?php echo $question['questionID'] ?>"
+                       name="question<?php echo $question['questionID'] ?>" value="<?php echo $answer ?>">
+                <label for="response<?php echo $answer.$question['questionID'] ?>"><?php echo $question['answer'.$answer] ?></label>
+            </div>
+        <?php endforeach; ?>
 
             </div>
         <?php else: ?> <input type="hidden" id="nbQuestion" name="nbQuestion" value="<?php echo $question ?>">
