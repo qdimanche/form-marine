@@ -10,5 +10,5 @@ try {
 catch (PDOException $e) {
     echo 'Error : ' . $e->getMessage() . '<br/>';
 }
-
+require 'countGraduations.php';
 header('Location: ../questionsList.php');

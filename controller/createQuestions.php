@@ -50,5 +50,6 @@ for ($i = 1; $i <= 4; $i++) {
             echo "Erreur : " . $e->getMessage() . "<br/>";
         }
     }
+    require 'countGraduations.php';
     header('Location: ../questionsList.php');
 }

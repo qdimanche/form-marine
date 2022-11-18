@@ -26,7 +26,6 @@ if (isset($_POST['nbQuestion'])) {
     }
     $date = date('d-m-y h:i:s');
     $query = "INSERT INTO results VALUES (NULL,'$value','$total','$content','$date');";
-    echo $query;
     $stmt = $db->prepare($query);
     try {
       $stmt = $stmt->execute();
