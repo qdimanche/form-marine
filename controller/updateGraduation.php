@@ -22,4 +22,4 @@ if ($_POST['id']) {
         die();
     }
 }
-   //header('Location: ../index.php');
+   header('Location: ../index.php');
