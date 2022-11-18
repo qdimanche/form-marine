@@ -37,8 +37,16 @@ $lastIdQuestion = $res;
 for ($i = 1; $i <= 4; $i++) {
     if ($_POST['response' . $i] && $_POST['bareme' . $i]) {
         $response = $_POST['response' . $i];
+        $arrayResponse = str_split($response);
+        $formatedResponse = "";
+        foreach ($arrayResponse as $char) {
+            if ($char == "'"){
+              $char = "\'";
+            }
+            $formatedResponse .= $char;
+          }
         $value = $_POST['bareme' . $i];
-        $insertAnswer = $db->prepare("INSERT INTO answers (name, value, questionID) VALUES ('$response', '$value', '$lastIdQuestion[0]')");
+        $insertAnswer = $db->prepare("INSERT INTO answers (name, value, questionID) VALUES ('$formatedResponse', '$value', '$lastIdQuestion[0]')");
         try {
             $res = $insertAnswer->execute();
         } catch (PDOException $e) {
