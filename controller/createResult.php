@@ -24,7 +24,9 @@ if (isset($_POST['nbQuestion'])) {
         $graduationID = $graduation['0'];
       }
     }
-    $query = "INSERT INTO results VALUES (NULL,'$value','$total','$content');";
+    $date = date('d-m-y h:i:s');
+    $query = "INSERT INTO results VALUES (NULL,'$value','$total','$content','$date');";
+    echo $query;
     $stmt = $db->prepare($query);
     try {
       $stmt = $stmt->execute();
@@ -40,7 +42,7 @@ if (isset($_POST['nbQuestion'])) {
     </form>
 
     <script type="text/javascript">
-    console.log('cc');
+    
       document.forms['hiddenForm'].submit();
     </script>
     <?php
