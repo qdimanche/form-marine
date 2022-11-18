@@ -23,11 +23,14 @@ require 'auth.php';
         
             <div class="flex flex-col">
                 <div class="flex items-center justify-between py-8 border-b border-slate-200">
-                    <span class="w-1/2">Résultat <?php echo $iterator ?></span>
-                    <div class="flex space-x-4 w-1/2">
-                        <span class="font-bold">Nombre de points :</span>
-                        <span><?php echo $result[0]?></span>
-                       <span class="!ml-24"><?php echo $result[1]?></span>
+                    <span class="">Résultat <?php echo $iterator ?></span>
+                    <div class="flex justify-around w-1/2">
+                        <div class="flex space-x-4 ">
+                            <span class="font-bold">Nombre de points :</span>
+                            <span><?php echo $result[0]?></span>
+                        </div>
+
+                       <span class=""><?php echo $result[1]?></span>
 
                     </div>
                 </div>
