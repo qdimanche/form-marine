@@ -18,7 +18,8 @@ require 'auth.php';
         <?php
         $iterator = 1;
         if (count($res)>0):
-        foreach ($res as $result): ?>
+        foreach ($res as $result):
+            ?>
         
             <div class="flex flex-col">
                 <div class="flex items-center justify-between py-8 border-b border-slate-200">
@@ -26,6 +27,8 @@ require 'auth.php';
                     <div class="flex space-x-4 w-1/2">
                         <span class="font-bold">Nombre de points :</span>
                         <span><?php echo $result[0]?></span>
+                       <span class="!ml-24"><?php echo $result[1]?></span>
+
                     </div>
                 </div>
             </div>
