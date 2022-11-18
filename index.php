@@ -29,7 +29,7 @@ $listQuestionsIDs = json_encode($res);
         if ($question !== $res["nbQuestion"]):?>
             <div class="flex flex-col py-8 border-b border-slate-200">
 
-                <div class="flex space-x-2 mb-4 font-bold">
+                <div class="flex space-x-2 mb-6 font-bold">
                     <span>Q<?php echo $iterator ?>:</span>
                     <span><?php echo $question['name'] ?></span>
                     <?php $iterator++ ?>
@@ -41,7 +41,7 @@ $listQuestionsIDs = json_encode($res);
             shuffle($listAnswer);
         foreach ($listAnswer as $answer): ?>
             
-            <div class="flex space-x-2 mb-1">
+            <div class="flex space-x-2 mb-2">
                 <input type="radio" id="response<?php echo $question['questionID'] ?>"
                        name="question<?php echo $question['questionID'] ?>" value="<?php echo $answer ?>">
                 <label for="response<?php echo $answer.$question['questionID'] ?>"><?php echo $question['answer'.$answer] ?></label>
